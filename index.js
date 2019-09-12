@@ -9,7 +9,7 @@ var jwt = require('jsonwebtoken');
 
 var JWT_KEY = 'IAMSOSECRETIVE!';
 
-var cluster = new couchbase.Cluster('couchbase://localhost');
+var cluster = new couchbase.Cluster('couchbase://cb-example-srv.my-db.svc.cluster.local');
 var bucket = cluster.openBucket('travel-sample');
 
 var app = express();

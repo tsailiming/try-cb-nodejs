@@ -13,7 +13,7 @@ var connStr = process.env.CONN_STR || 'couchbase://localhost/'
 var username = process.env.DB_USERNAME || ''
 var password = process.env.DB_password || ''
 var cluster = new couchbase.Cluster(connStr);
-cluster.authenticate('USERNAME', 'PASSWORD');
+cluster.authenticate(username, password);
 var bucket = cluster.openBucket('travel-sample');
 
 var app = express();

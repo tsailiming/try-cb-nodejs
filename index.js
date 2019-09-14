@@ -9,7 +9,11 @@ var jwt = require('jsonwebtoken');
 
 var JWT_KEY = 'IAMSOSECRETIVE!';
 
-var cluster = new couchbase.Cluster('couchbase://cb-example-srv.my-db.svc.cluster.local');
+var connStr = process.env.CONN_STR || 'couchbase://localhost/'
+var username = process.env.DB_USERNAME || ''
+var password = process.env.DB_password || ''
+var cluster = new couchbase.Cluster(connStr);
+cluster.authenticate('USERNAME', 'PASSWORD');
 var bucket = cluster.openBucket('travel-sample');
 
 var app = express();

@@ -14,6 +14,11 @@ var username = process.env.DB_USERNAME || ''
 var password = process.env.DB_password || ''
 var cluster = new couchbase.Cluster(connStr);
 cluster.authenticate(username, password);
+
+console.log("DB connection string: ", connStr);
+console.log("DB username: ", username);
+console.log("DB password: ", password);
+
 var bucket = cluster.openBucket('travel-sample');
 
 var app = express();

@@ -11,7 +11,7 @@ var JWT_KEY = 'IAMSOSECRETIVE!';
 
 var connStr = process.env.CONN_STR || 'couchbase://localhost/'
 var username = process.env.DB_USERNAME || ''
-var password = process.env.DB_password || ''
+var password = process.env.DB_PASSWORD || ''
 var cluster = new couchbase.Cluster(connStr);
 cluster.authenticate(username, password);
 
